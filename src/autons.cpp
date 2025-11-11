@@ -188,7 +188,7 @@ void Skills()
     chassis.turn_to_angle(-180);
     sepet.set(false);
     wait(0.1, seconds);
-    chassis.drive_distance(12,-180);
+    chassis.drive_distance(8,-180); //
     wait(0.1, seconds);
     chassis.drive_distance(60, -93); // 80
     chassis.turn_to_angle(-90);      //
@@ -210,10 +210,10 @@ void Skills()
     matchLoader.set(false);
 
     // Parking
-    chassis.drive_distance(10,-90);
+    chassis.drive_distance(18,-90);
     chassis.drive_distance(70, -160);
     chassis.turn_to_angle(0);
-    LeftDriveSmart.spin(reverse, 12, volt);
+    LeftDriveSmart.spin(reverse, 11, volt);
     RightDriveSmart.spin(reverse, 12, volt);
     wait( 1.5, seconds);
     LeftDriveSmart.stop(hold);
