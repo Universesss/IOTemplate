@@ -176,7 +176,7 @@ void Skills()
     wait(0.3, seconds);
 
     // scoring   --TOP-1
-    chassis.drive_distance(-24, 90);
+    chassis.drive_distance(-24, 90.5);
     gatePiston.set(false);
     wait(0.1, seconds);
     sepet.set(true);
@@ -194,11 +194,11 @@ void Skills()
     chassis.turn_to_angle(-90);      //
     chassis.drive_distance(25, -90); //
     wait(0.01, seconds);
-    chassis.drive_distance(23, -35);
+    chassis.drive_distance(24.5, -35);
     gatePiston.set(true);
     chassis.turn_to_angle(-90);
     matchLoader.set(true);
-    chassis.drive_distance(23, -90);
+    chassis.drive_distance(23, -89);
     wait(0.3, seconds);
 
     // scoring   --TOP-2
@@ -210,9 +210,14 @@ void Skills()
     matchLoader.set(false);
 
     // Parking
-    chassis.drive_distance(50, 180);
+    chassis.drive_distance(10,-90);
+    chassis.drive_distance(70, -160);
     chassis.turn_to_angle(0);
-    chassis.drive_distance(-50, 0);
+    LeftDriveSmart.spin(reverse, 12, volt);
+    RightDriveSmart.spin(reverse, 12, volt);
+    wait( 1.5, seconds);
+    LeftDriveSmart.stop(hold);
+    RightDriveSmart.stop(hold);
 }
 
 void RobotSkills()
