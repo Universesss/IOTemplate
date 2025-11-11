@@ -1,0 +1,2 @@
+// void mogoTake();
+// void mogoOut();
