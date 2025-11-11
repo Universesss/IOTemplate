@@ -1,8 +1,5 @@
 #include "vex.h"
 
-//a
-hi
-
 
 using namespace vex;
 competition Competition;
