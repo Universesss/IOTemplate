@@ -153,18 +153,17 @@ void usercontrol(void)
       intake.stop();
     }
 
-    if(Controller1.ButtonDown.pressing()){
+    if(Controller1.ButtonR2.pressing()){
+      gatePiston.set(true);
+      intake.spin(fwd, 12, volt);
+    }else if(Controller1.ButtonL2.pressing()){
       sepet.set(true);
+      intake.spin(forward, 12, volt);
     }else{
       sepet.set(false);
-    }
-
-    if(Controller1.ButtonB.pressing()){
-      gatePiston.set(true);
-    }else{
       gatePiston.set(false);
+      intake.stop()
     }
-    
 
     
     
