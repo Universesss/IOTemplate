@@ -142,27 +142,28 @@ void usercontrol(void)
   while (1)
   {
 
+    intake.setVelocity(127, pct);
+
     // usercontrol code here
 
     if(Controller1.ButtonR1.pressing()){
-      intake.spin(fwd, 12, volt);
+      intake.spin(fwd);
     }else if(Controller1.ButtonL1.pressing()){
-      intake.spin(reverse, 12, volt);
+      intake.spin(reverse);
     }
-    else {
-      intake.stop();
-    }
-
-    if(Controller1.ButtonR2.pressing()){
+    // else {
+    //   intake.stop();
+    // }
+    else if(Controller1.ButtonR2.pressing()){
       gatePiston.set(true);
-      intake.spin(fwd, 12, volt);
+      intake.spin(fwd);
     }else if(Controller1.ButtonL2.pressing()){
       sepet.set(true);
-      intake.spin(forward, 12, volt);
+      intake.spin(forward);
     }else{
       sepet.set(false);
       gatePiston.set(false);
-      intake.stop()
+      intake.stop();
     }
 
     
