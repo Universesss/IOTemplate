@@ -327,6 +327,38 @@ void redLeft()
     chassis.drive_distance(2, -45);
 }
 
+void BlueRight(){
+    gatePiston.set(true);
+
+    // matchload
+    chassis.drive_distance(30.2, -1);
+    chassis.turn_to_angle(90);
+    matchLoader.set(true);
+    chassis.drive_distance(-7.2, 91);
+
+    intake.spin(forward);
+    chassis.drive_distance(13, 90);
+    wait(0.1, seconds);
+
+    // scoring   --TOP-1
+    chassis.drive_distance(-24.8, 90);
+    sepet.set(true);
+    intake.setVelocity(30,pct);
+
+    Color = BLUE; // alliance color
+    SortColor = true;
+
+    loc = Basket;
+
+    ColorSort(10); // renk ayırma fonksiyonu çalıştırılır, parametre süreyi belirler
+
+
+    wait(0.1, seconds);
+
+    wait(0.7, seconds);
+    matchLoader.set(false);
+}
+
 void redRightAwp()
 {
 
@@ -345,31 +377,84 @@ void redRightAwp()
     // scoring   --TOP-1
     chassis.drive_distance(-24.8, 90);
     sepet.set(true);
-    wait(0.1, seconds);
-    gatePiston.set(false);
+    intake.setVelocity(30,pct);
+
+    Color = RED; // alliance color
+    SortColor = true;
+
+    loc = Basket;
+
+    ColorSort(10); // renk ayırma fonksiyonu çalıştırılır, parametre süreyi belirler
+
+
     wait(0.1, seconds);
 
     wait(0.7, seconds);
     matchLoader.set(false);
-    wait(2.3, seconds);
+    // wait(2.3, seconds);
 
-    chassis.drive_max_voltage = 12;
+    // chassis.drive_max_voltage = 12;
 
-    // Scoring   --Bottom-1
-    gatePiston.set(true);
-    sepet.set(false);
-    chassis.drive_distance(3, 90);
-    chassis.turn_to_angle(-180);
+    // // Scoring   --Bottom-1
+    // gatePiston.set(true);
+    // sepet.set(false);
+    // chassis.drive_distance(3, 90);
+    // chassis.turn_to_angle(-180);
 
-    chassis.drive_distance(10, -180);
-    chassis.turn_to_angle(-135);
-    intake.spin(fwd);
-    chassis.drive_max_voltage = 6;
-    chassis.drive_distance(41, -135);
-    sepet.set(true);
-    wait(0.7, sec);
-    intake.spin(reverse);
+    // chassis.drive_distance(10, -180);
+    // chassis.turn_to_angle(-135);
+    // intake.spin(fwd);
+    // chassis.drive_max_voltage = 6;
+    // chassis.drive_distance(41, -135);
+    // sepet.set(true);
+    // wait(0.7, sec);
+    // intake.spin(reverse);
 }
+
+
+// void redRightAwp()
+// {
+
+//     gatePiston.set(true);
+
+//     // matchload
+//     chassis.drive_distance(30.2, -1);
+//     chassis.turn_to_angle(90);
+//     matchLoader.set(true);
+//     chassis.drive_distance(-7.2, 91);
+
+//     intake.spin(forward);
+//     chassis.drive_distance(13, 90);
+//     wait(0.1, seconds);
+
+//     // scoring   --TOP-1
+//     chassis.drive_distance(-24.8, 90);
+//     sepet.set(true);
+//     wait(0.1, seconds);
+//     gatePiston.set(false);
+//     wait(0.1, seconds);
+
+//     wait(0.7, seconds);
+//     matchLoader.set(false);
+//     wait(2.3, seconds);
+
+//     chassis.drive_max_voltage = 12;
+
+//     // Scoring   --Bottom-1
+//     gatePiston.set(true);
+//     sepet.set(false);
+//     chassis.drive_distance(3, 90);
+//     chassis.turn_to_angle(-180);
+
+//     chassis.drive_distance(10, -180);
+//     chassis.turn_to_angle(-135);
+//     intake.spin(fwd);
+//     chassis.drive_max_voltage = 6;
+//     chassis.drive_distance(41, -135);
+//     sepet.set(true);
+//     wait(0.7, sec);
+//     intake.spin(reverse);
+// }
 
 void ileri()
 {

@@ -17,5 +17,6 @@ void redRightAwp();
 void redLeft();
 void Skills();
 void RobotSkills();
+void BlueRight();
 
 void RenkDeneme();

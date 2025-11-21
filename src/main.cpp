@@ -41,7 +41,7 @@ Drive chassis(
 );
 float deger = 0;
 
-int current_auton_selection = 0;
+int current_auton_selection = 2;
 bool auto_started = false;
 
 void pre_auton(void)
@@ -81,34 +81,28 @@ void pre_auton(void)
     switch (current_auton_selection)
     {
     case 0:
-      Brain.Screen.printAt(5, 60, "Ileri");
+      Brain.Screen.printAt(5, 60, "Left");
       Controller1.Screen.setCursor(3, 1);
       Controller1.Screen.clearLine(3);
-      // Controller1.Screen.print("Ileri");
+      Controller1.Screen.print("Left");
       break;
     case 1:
-      Brain.Screen.printAt(5, 60, "Geri");
+      Brain.Screen.printAt(5, 60, "RED Right");
       Controller1.Screen.setCursor(3, 1);
       Controller1.Screen.clearLine(3);
-      Controller1.Screen.print("Geri");
+      Controller1.Screen.print("Right");
       break;
     case 2:
-      Brain.Screen.printAt(5, 60, "Saga");
+      Brain.Screen.printAt(5, 60, "BLUE Right");
       Controller1.Screen.setCursor(3, 1);
       Controller1.Screen.clearLine(3);
-      Controller1.Screen.print("Saga");
+      Controller1.Screen.print("BLUE Right");
       break;
     case 3:
-      Brain.Screen.printAt(5, 60, "Sola");
+      Brain.Screen.printAt(5, 60, "RobotSkills");
       Controller1.Screen.setCursor(3, 1);
       Controller1.Screen.clearLine(3);
-      Controller1.Screen.print("Sola");
-      break;
-    case 4:
-      Brain.Screen.printAt(5, 60, "ileri");
-      Controller1.Screen.setCursor(3, 1);
-      Controller1.Screen.clearLine(3);
-      Controller1.Screen.print("ileri");
+      Controller1.Screen.print("RobotSkills");
       break;
     }
 
@@ -126,7 +120,22 @@ void autonomous(void)
   // redRightAwp();
   // redLeft();
   // RobotSkills();
-  Skills();
+  // Skills();
+
+  switch (current_auton_selection){
+    case 0:
+      redLeft();
+      break;
+    case 1:
+      redRightAwp();
+      break;
+    case 2:
+      BlueRight();
+      break;
+    case 3:
+      Skills();
+      break;
+  }
 
   // RenkDeneme();
 }
