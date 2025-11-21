@@ -41,7 +41,7 @@ Drive chassis(
 );
 float deger = 0;
 
-int current_auton_selection = 2;
+int current_auton_selection = 3;
 bool auto_started = false;
 
 void pre_auton(void)

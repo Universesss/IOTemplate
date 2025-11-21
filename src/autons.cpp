@@ -184,6 +184,7 @@ void Skills()
     matchLoader.set(false);
 
     // MatchLoad  --2
+    gatePiston.set(true);
     chassis.drive_distance(5, -90);
     chassis.turn_to_angle(-180);
     sepet.set(false);
@@ -287,6 +288,7 @@ void redLeft()
 
     intake.spin(forward);
     chassis.drive_distance(11.51, -90); // 13
+    wait(0.2, seconds);
 
     // scoring   --TOP-1
     chassis.drive_distance(-25, -93);
@@ -323,8 +325,8 @@ void redLeft()
     sepet.set(true);
     wait(0.1, sec);
     midTop.set(true);
-    chassis.turn_to_angle(-46);
-    chassis.drive_distance(2, -45);
+    chassis.turn_to_angle(-45);
+    // chassis.drive_distance(, -45);
 }
 
 void BlueRight(){
